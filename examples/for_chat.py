@@ -6,8 +6,8 @@ from fuzzywuzzy import fuzz
 bot = telebot.TeleBot('Здесь твой токен, полученный от @botfather')
 # Загружаем список фраз и ответов в массив
 mas = []
-if os.path.exists('data/boltun.txt'):
-    f = open('data/boltun.txt', 'r', encoding='UTF-8')
+if os.path.exists('../data/boltun.txt'):
+    f = open('../data/boltun.txt', 'r', encoding='UTF-8')
     for x in f:
         if (len(x.strip()) > 2):
             mas.append(x.strip().lower())
@@ -18,7 +18,7 @@ if os.path.exists('data/boltun.txt'):
 def answer(text):
     try:
         text = text.lower().strip()
-        if os.path.exists('data/boltun.txt'):
+        if os.path.exists('../data/boltun.txt'):
             a = 0
             n = 0
             nn = 0
