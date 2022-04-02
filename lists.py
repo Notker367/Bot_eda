@@ -1,17 +1,23 @@
 # Загружаем список регулярных покупок
-def get_pokypki():
-    f = open('data/pokypki.txt', 'r', encoding='UTF-8')
-    pokypki = f.read().split('\n')
+def get_spisok(x):
+    if x == 1:
+        file_link = 'data/holodos.txt'
+    elif x == 2:
+        file_link = 'data/pokypki.txt'
+    elif x == 3:
+        file_link = 'data/zakypka.txt'
+    else:
+        print("Error: неверный параметр в get_spisok")
+    f = open(file_link, 'r', encoding='UTF-8')
+    spisok = f.read().split('\n')
     f.close()
-    return pokypki
-
+    return spisok
 
 # Собираем сообщение добавляя к каждому эллементу нидекс от 1..
-def text_collector():
-    pokypki = get_pokypki()
-    pokypki = adder_index(pokypki)
-    end_text = '\n '.join(pokypki)
-    # send_text2 = *pokypki
+def text_collector(nuber_spisok):
+    spisok = get_spisok(nuber_spisok)
+    spisok_and_index = adder_index(spisok)
+    end_text = '\n '.join(spisok_and_index)
     return end_text
 
 
