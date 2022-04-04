@@ -5,7 +5,7 @@ bot = telebot.TeleBot('Здесь твой токен, полученный от
 # Адрес телеграм-канала, начинается с @
 CHANNEL_NAME = '@адрес_твоего_канала'
 # Загружаем список шуток
-f = open('../data/fun.txt', 'r', encoding='UTF-8')
+f = open('../data/examlples/fun.txt', 'r', encoding='UTF-8')
 jokes = f.read().split('\n')
 f.close()
 # Пока не закончатся шутки, посылаем их в канал

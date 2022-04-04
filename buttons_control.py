@@ -15,4 +15,5 @@ def buttons_create(x):
                    tx.text_button('redact', 2))
     else:
         print('Error: Не верный аргумент в buttons_create')
+        return
     return markup

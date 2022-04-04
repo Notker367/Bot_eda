@@ -24,9 +24,12 @@ def eda(m, res=False):
 def redact(m, res=False):
     # Добавляем три кнопки
     markup = bc.buttons_create(2)
+    # отправляем на обработку сообщение
+    ir.command_processing(m)
     bot.send_message(m.chat.id,
                      tx.text_for_redact(),
                      reply_markup=markup)
+
 
 
 # Получение сообщений от юзера

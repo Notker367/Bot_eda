@@ -5,9 +5,14 @@ def text_start_eda():
     return text
 
 
-def text_for_redact():
-    test = 'Выбери действие для редактирования'
-    return test
+def text_for_redact(arg=None):
+    if arg is None:
+        text = 'Выбери действие для редактирования'
+    elif arg == 1:
+        text = 'text_for_redact 1'
+    else:
+        text = 'Error text_for_redact'
+    return text
 
 
 def text_button(list, arg):
@@ -24,4 +29,20 @@ def text_button(list, arg):
               'Отчистить всё']
     else:
         print('Error: Неверный аргумент для text_button')
+        return
+    return xl[arg]
+
+
+def text_command_arg(list, arg):
+    if list == 'comand':
+        xl = ['add',
+              'del',
+              'chg']
+    elif list == 'spisok':
+        xl = ['h',
+              'p',
+              'z']
+    else:
+        print('Error: Неверный аргумент для text_command_arg')
+        return
     return xl[arg]
