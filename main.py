@@ -11,7 +11,7 @@ bot = telebot.TeleBot('5209249131:AAHBQQtPaC9eUhIM3WpqtXkxDm2x4x5Cb5U')
 
 
 # Команда start
-@bot.message_handler(commands=["eda"])
+@bot.message_handler(commands=["eda", "back"])
 def eda(m, res=False):
     # Добавляем три кнопки
     markup = bc.buttons_create(1)
@@ -20,14 +20,23 @@ def eda(m, res=False):
                      reply_markup=markup)
 
 
+@bot.message_handler(commands=["redact"])
+def redact(m, res=False):
+    # Добавляем три кнопки
+    markup = bc.buttons_create(2)
+    bot.send_message(m.chat.id,
+                     tx.text_for_redact(),
+                     reply_markup=markup)
+
+
 # Получение сообщений от юзера
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     # Назначаем текст для вывода основываясь на вводе
     send_text = ir.buttons_processing_first(message)
-    # Отсылаем юзеру сообщение в его чат
-    print(send_text)  # log
+    # Отсылаем юзеру сообщение
     bot.send_message(message.chat.id, send_text)
+    print(message)
 
 
 # Запускаем бота

@@ -13,15 +13,21 @@ def get_spisok(x):
     f.close()
     return spisok
 
+
 # Собираем сообщение добавляя к каждому эллементу нидекс от 1..
-def text_collector(nuber_spisok):
-    spisok = get_spisok(nuber_spisok)
+def text_collector(number_spisok):
+    spisok = get_spisok(number_spisok)
+    work_spisok(spisok.copy)
     spisok_and_index = adder_index(spisok)
     end_text = '\n '.join(spisok_and_index)
     return end_text
 
 
 def adder_index(lst):
-    interact_index = [range(1, len(lst))]
     xl = map(lambda x: str(lst.index(x) + 1) + ' - ' + x, lst)
     return xl
+
+
+def work_spisok(x=None):
+    return x
+
