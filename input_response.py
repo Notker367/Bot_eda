@@ -23,12 +23,12 @@ def command_processing(massage):
     elif len(ml) != 4:
         print('Неверное кол-во аргументов для command_processing')
         return
-    elif len(ml) == 4 and ml[0] == '/redact':
+    elif len(ml) >= 4 and ml[0] == '/redact':
         redact_processing(ml)
     else:
         print('Error: command_processing')
         return
-  #  print(ml)
+  # print(ml)
 
 
 def redact_processing(ml):

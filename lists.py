@@ -63,7 +63,7 @@ def del_to_list(spisok, food):
     return
 
 
-def cahge_to_list(spisok, food):
+def change_to_list(spisok, food):
     file = work_spisok(spisok)
 
     return

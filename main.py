@@ -31,7 +31,6 @@ def redact(m, res=False):
                      reply_markup=markup)
 
 
-
 # Получение сообщений от юзера
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
